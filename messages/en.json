@@ -53,7 +53,7 @@
       "subtitle": "",
       "0": {
         "q": "What is QRBTF?",
-        "a": "QRBTF stands for \"QR Code Beautifier\" and it born out of a university course project of CUC. It was then that we began using methods of generative art to hide the QR codes within lines, bubbles, pixel art, and a variety of other intriguing patterns. The project has been open-sourced on GitHub, and remains accessible at classic.qrbtf.com.\n\nIn June 2023, pioneering the fusion of QR codes with generative AI, we utilized ControlNet and Stable Diffusion to create the world’s first AI-generated QR code. Afterward, we shared it on platforms like Reddit, where it garnered widespread attention.\n\nNow, we have reconstructed the entire website, combining the parametric part and the AI part, bringing a new smooth experience."
+        "a": "QRBTF stands for \"QR Code Beautifier\" and it born out of a university course project of CUC. It was then that we began using methods of generative art to hide the QR codes within lines, bubbles, pixel art, and a variety of other intriguing patterns. The project has been open-sourced on GitHub, and remains accessible at classic.qrbtf.com.\n\nIn June 2023, pioneering the fusion of QR codes with generative AI, we utilized ControlNet and Stable Diffusion to create the world's first AI-generated QR code. Afterward, we shared it on platforms like Reddit, where it garnered widespread attention.\n\nNow, we have reconstructed the entire website, combining the parametric part and the AI part, bringing a new smooth experience."
       },
       "1": {
         "q": "What kind of QR codes can I generate?",
@@ -314,7 +314,7 @@
       },
       "control_strength": {
         "label": "Control strength",
-        "desc": ""
+        "desc": "Higher strength makes QR code easier to scan but makes image look more like a QR code; lower strength creates more natural images but may be harder to scan. Recommended: 1.0~1.3"
       },
       "prompt_tuning": {
         "label": "Prompt tuning",
@@ -322,23 +322,23 @@
       },
       "restoration_rate": {
         "label": "Restoration rate",
-        "desc": ""
+        "desc": "Higher values make image details clearer. For complex scenes, set to 0.3~0.5; for simple scenes, you can lower or disable it"
       },
       "size": {
         "label": "Size",
-        "desc": ""
+        "desc": "Larger size allows for more elements and bigger composition ratio in the image"
       },
       "padding_ratio": {
         "label": "Padding ratio",
-        "desc": ""
+        "desc": "Adjusts the proportion of QR code in the entire image. Lower value means larger QR code area. Default: 0.2"
       },
       "correct_level": {
         "label": "Correct level",
-        "desc": ""
+        "desc": "Longer links require higher correction levels for scanning, but will make QR code elements more visible in the image"
       },
       "anchor_style": {
         "label": "Anchor style",
-        "desc": "",
+        "desc": "Square and circle anchors are easier to recognize but more noticeable; minimal option tries to hide QR code elements",
         "square": "Square",
         "circle": "Circle",
         "minimal": "Minimal"
@@ -353,7 +353,7 @@
   },
   "not_found": {
     "title": "Page not found",
-    "tagline": "Sorry, we couldn’t find the page you’re looking for.",
+    "tagline": "Sorry, we couldn't find the page you're looking for.",
     "home": "Go back home"
   },
   "LocaleSwitcher": {

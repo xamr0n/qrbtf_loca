@@ -68,7 +68,7 @@ interface ParamItemProps {
 
 function ParamItem(props: ParamItemProps) {
   return (
-    <FormItem className="flex items-center py-1.5 space-y-0">
+    <FormItem className="flex flex-col py-1.5 space-y-0 w-full">
       {props.children}
     </FormItem>
   );
@@ -77,16 +77,20 @@ function ParamItem(props: ParamItemProps) {
 interface ParamLabelProps {
   label: string;
   desc?: string;
+  children?: React.ReactNode;
 }
 
 function ParamLabel(props: ParamLabelProps) {
   return (
-    <div className="flex flex-col items-start justify-center gap-1 grow">
-      <FormLabel>{props.label}</FormLabel>
+    <>
+      <div className="flex items-center justify-between w-full">
+        <FormLabel className="flex-shrink">{props.label}</FormLabel>
+        <ParamValue>{props.children}</ParamValue>
+      </div>
       {props.desc && (
-        <FormDescription className="text-xs">{props.desc}</FormDescription>
+        <FormDescription className="text-xs max-w-[60%]">{props.desc}</FormDescription>
       )}
-    </div>
+    </>
   );
 }
 
@@ -96,7 +100,7 @@ interface ParamValueProps {
 
 function ParamValue(props: ParamValueProps) {
   return (
-    <div className="relative flex justify-end items-center gap-2 w-48">
+    <div className="relative flex justify-end items-center gap-2 w-48 flex-shrink-0">
       {props.children}
     </div>
   );
@@ -115,8 +119,7 @@ export function ParamNumberControl<P extends FieldValues>(
   };
   return (
     <ParamItem>
-      <ParamLabel label={props.label} desc={props.desc} />
-      <ParamValue>
+      <ParamLabel label={props.label} desc={props.desc}>
         <FormControl>
           <Slider
             value={
@@ -147,7 +150,7 @@ export function ParamNumberControl<P extends FieldValues>(
             onBlur={() => handleInputValueUpdate()}
           />
         </FormControl>
-      </ParamValue>
+      </ParamLabel>
     </ParamItem>
   );
 }
@@ -277,8 +280,7 @@ export function ParamColorControl<P extends FieldValues>(
 
   return (
     <ParamItem>
-      <ParamLabel label={props.label} desc={props.desc} />
-      <ParamValue>
+      <ParamLabel label={props.label} desc={props.desc}>
         <FormControl>
           <Input
             value={props.field.value}
@@ -345,7 +347,7 @@ export function ParamColorControl<P extends FieldValues>(
             </PopoverContent>
           </Popover>
         </FormControl>
-      </ParamValue>
+      </ParamLabel>
     </ParamItem>
   );
 }
@@ -355,15 +357,14 @@ export function ParamBooleanControl<P extends FieldValues>(
 ) {
   return (
     <ParamItem>
-      <ParamLabel label={props.label} desc={props.desc} />
-      <ParamValue>
+      <ParamLabel label={props.label} desc={props.desc}>
         <FormControl>
           <Switch
             checked={props.field.value}
             onCheckedChange={(value) => props.field.onChange(value)}
           />
         </FormControl>
-      </ParamValue>
+      </ParamLabel>
     </ParamItem>
   );
 }
@@ -373,8 +374,7 @@ export function ParamSelectControl<P extends FieldValues>(
 ) {
   return (
     <ParamItem>
-      <ParamLabel label={props.label} desc={props.desc} />
-      <ParamValue>
+      <ParamLabel label={props.label} desc={props.desc}>
         <FormControl>
           <Select
             value={props.field.value}
@@ -392,7 +392,7 @@ export function ParamSelectControl<P extends FieldValues>(
             </SelectContent>
           </Select>
         </FormControl>
-      </ParamValue>
+      </ParamLabel>
     </ParamItem>
   );
 }
@@ -411,8 +411,7 @@ export function ParamImageControl<P extends FieldValues>(
 
   return (
     <ParamItem>
-      <ParamLabel label={props.label} desc={props.desc} />
-      <ParamValue>
+      <ParamLabel label={props.label} desc={props.desc}>
         <FormControl>
           <>
             <Input
@@ -436,7 +435,7 @@ export function ParamImageControl<P extends FieldValues>(
             </Button>
           </>
         </FormControl>
-      </ParamValue>
+      </ParamLabel>
     </ParamItem>
   );
 }
