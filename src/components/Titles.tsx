@@ -36,7 +36,7 @@ export function StyleTitle(props: StyleTitleProps) {
         <p className="mt-2 mb-2 opacity-50">{props.subtitle}</p>
       )}
       {props.desc && (
-        <p className="opacity-50 text-xs">{props.desc}</p>
+        <p className="mb-2 opacity-50 text-xs">{props.desc}</p>
       )}
     </div>
   );
