@@ -67,7 +67,11 @@ async function srcToImage(name: string, src: string) {
   const pathname = parsedUrl.pathname;
   const suffix = pathname.split(".").pop() || "jpg";
 
-  const image = await http(src);
+  const image = await http(src, {
+    headers: {
+      "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+    }
+  });
   const blob = await image.blob();
   createDownloadTask(URL.createObjectURL(blob), `QRcode_${name}.${suffix}`);
 }
