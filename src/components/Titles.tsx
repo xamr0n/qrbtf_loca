@@ -18,6 +18,7 @@ interface StyleTitleProps {
   title: string;
   label?: string;
   subtitle?: string;
+  desc?: string;
 }
 
 export function StyleTitle(props: StyleTitleProps) {
@@ -32,7 +33,10 @@ export function StyleTitle(props: StyleTitleProps) {
         )}
       </h2>
       {props.subtitle && (
-        <p className="mt-2 mb-4 opacity-50">{props.subtitle}</p>
+        <p className="mt-2 mb-2 opacity-50">{props.subtitle}</p>
+      )}
+      {props.desc && (
+        <p className="opacity-50 text-xs">{props.desc}</p>
       )}
     </div>
   );

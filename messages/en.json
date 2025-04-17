@@ -298,6 +298,7 @@
     "g1": {
       "title": "G1",
       "subtitle": "Generative AI QR code",
+      "desc": "Version realv2 | Specializes in realistic landscapes and objects",
       "prompt": {
         "label": "Prompt",
         "desc": "Keywords to generate QR code image, in any language.",

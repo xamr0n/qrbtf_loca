@@ -14,8 +14,9 @@ export default function Page() {
     <QrcodeGeneratorWithProvider<QrbtfRendererG1Props>
       title={t("title")}
       subtitle={t("subtitle")}
+      desc={t("desc")}
       qrcodeModule={qrbtfModuleG1}
-      params={params}
+      params={params} 
       defaultPreset="g1"
     />
   );

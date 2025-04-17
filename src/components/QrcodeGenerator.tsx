@@ -55,6 +55,7 @@ export interface QrcodeGeneratorProps<P extends {}>
   qrcodeModule: QrbtfModule<P>;
   params: CommonControlProps<P>[];
   defaultPreset: string;
+  desc?: string;
 }
 
 export function QrcodeGenerator<P extends {}>(props: QrcodeGeneratorProps<P>) {
@@ -119,6 +120,7 @@ export function QrcodeGenerator<P extends {}>(props: QrcodeGeneratorProps<P>) {
                 title={props.title}
                 label={props.label}
                 subtitle={props.subtitle}
+                desc={props.desc}
               />
 
               <div>
