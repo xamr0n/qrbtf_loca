@@ -26,10 +26,17 @@ const list = [
     q: "3.q",
     a: "3.a",
   },
-  // {
-  //   q: "4.q",
-  //   a: "4.a",
-  // },
+  {
+    q: "4.q",
+    a: "4.a",
+  },
+  {
+    q: "5.q",
+    a: "5.a",
+  },  {
+    q: "6.q",
+    a: "6.a",
+  },
 ] as const;
 
 export function SectionQA() {
